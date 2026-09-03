@@ -155,6 +155,7 @@ input[type="number"] {
 }
 .input-help { color: var(--muted); font-size: 0.74rem; }
 .preset-row { display: flex; flex-wrap: wrap; gap: 7px; margin: 16px 0 20px; }
+.example-note { margin: -4px 0 20px; padding: 10px 12px; border-left: 4px solid var(--lime); background: #f7f4eb; color: var(--muted); font-size: 0.84rem; }
 .preset {
   padding: 6px 10px;
   border: 1.5px solid var(--ink);
