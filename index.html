@@ -6,12 +6,17 @@
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'; font-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
   <meta name="description" content="Free cleaning quote reality check for solo house cleaners. Estimate labor, supplies, travel, overhead, and a target profit margin in your browser.">
   <meta name="robots" content="index,follow,max-image-preview:large">
-  <meta property="og:title" content="Free Cleaning Quote Reality Check | CalmDeskKits">
+  <meta property="og:title" content="Free House Cleaning Quote Calculator | CalmDeskKits">
   <meta property="og:description" content="Check the numbers behind a residential cleaning quote before you send it.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://jz77a.github.io/calmdesk-cleaning-tools/">
+  <meta property="og:image" content="https://jz77a.github.io/calmdesk-cleaning-tools/calmdesk-quote-tutorial-thumbnail.png">
+  <meta property="og:image:width" content="1280">
+  <meta property="og:image:height" content="720">
+  <meta property="og:image:alt" content="CalmDeskKits house cleaning quote tutorial showing the offline quote calculator">
+  <meta name="twitter:card" content="summary_large_image">
   <meta name="theme-color" content="#ddff43">
-  <title>Free Cleaning Quote Reality Check | CalmDeskKits</title>
+  <title>Free House Cleaning Quote Calculator | CalmDeskKits</title>
   <link rel="canonical" href="https://jz77a.github.io/calmdesk-cleaning-tools/">
   <link rel="stylesheet" href="styles.css">
   <script type="application/ld+json">
@@ -43,7 +48,7 @@
     <section class="hero">
       <div class="wrap hero-grid">
         <div>
-          <p class="kicker">Free tool for solo cleaners</p>
+          <p class="kicker">Free house cleaning quote calculator</p>
           <h1>Check the quote before you send it.</h1>
           <p class="lede">A busy schedule is not the same as a profitable job. Enter your own labor, supply, travel, overhead, and margin assumptions to see a practical starting quote.</p>
           <div class="hero-actions">
@@ -81,41 +86,42 @@
                 <button class="preset" type="button" data-preset='{"hours":5,"laborRate":32,"supplies":20,"travel":15,"overhead":18,"margin":25}'>5-hour example</button>
                 <button class="preset" type="button" data-preset='{"hours":8,"laborRate":35,"supplies":35,"travel":20,"overhead":20,"margin":25}'>Deep-clean example</button>
               </div>
+              <p class="example-note"><strong>Example values are loaded.</strong> Replace every field with your own costs and targets before using the result.</p>
               <div class="field-grid">
                 <div class="field">
                   <label for="hours">Estimated labor hours</label>
-                  <input id="hours" data-quote-input type="number" min="0" step="0.25" value="4">
-                  <span class="input-help">Use total team hours, not clock time.</span>
+                  <input id="hours" data-quote-input type="number" min="0" step="0.25" value="4" aria-describedby="hours-help">
+                  <span class="input-help" id="hours-help">Use total team hours, not clock time.</span>
                 </div>
                 <div class="field">
-                  <label for="laborRate">Labor target per hour</label>
-                  <div class="input-wrap"><span>$</span><input id="laborRate" data-quote-input type="number" min="0" step="1" value="30"></div>
-                  <span class="input-help">What the labor must earn before tax.</span>
+                  <label for="laborRate">Labor target per hour (USD)</label>
+                  <div class="input-wrap"><span aria-hidden="true">$</span><input id="laborRate" data-quote-input type="number" min="0" step="1" value="30" aria-describedby="labor-rate-help"></div>
+                  <span class="input-help" id="labor-rate-help">What the labor must earn before tax.</span>
                 </div>
                 <div class="field">
-                  <label for="supplies">Supplies for this job</label>
-                  <div class="input-wrap"><span>$</span><input id="supplies" data-quote-input type="number" min="0" step="1" value="15"></div>
+                  <label for="supplies">Supplies for this job (USD)</label>
+                  <div class="input-wrap"><span aria-hidden="true">$</span><input id="supplies" data-quote-input type="number" min="0" step="1" value="15"></div>
                 </div>
                 <div class="field">
-                  <label for="travel">Travel / parking</label>
-                  <div class="input-wrap"><span>$</span><input id="travel" data-quote-input type="number" min="0" step="1" value="10"></div>
+                  <label for="travel">Travel / parking (USD)</label>
+                  <div class="input-wrap"><span aria-hidden="true">$</span><input id="travel" data-quote-input type="number" min="0" step="1" value="10"></div>
                 </div>
                 <div class="field">
-                  <label for="overhead">Overhead allowance</label>
-                  <div class="input-wrap suffix"><input id="overhead" data-quote-input type="number" min="0" max="100" step="1" value="15"><span>%</span></div>
-                  <span class="input-help">Insurance, software, admin, equipment.</span>
+                  <label for="overhead">Overhead allowance (%)</label>
+                  <div class="input-wrap suffix"><input id="overhead" data-quote-input type="number" min="0" max="100" step="1" value="15" aria-describedby="overhead-help"><span aria-hidden="true">%</span></div>
+                  <span class="input-help" id="overhead-help">Insurance, software, admin, equipment.</span>
                 </div>
                 <div class="field">
-                  <label for="margin">Target profit margin</label>
-                  <div class="input-wrap suffix"><input id="margin" data-quote-input type="number" min="0" max="80" step="1" value="20"><span>%</span></div>
-                  <span class="input-help">Margin is a share of the final price.</span>
+                  <label for="margin">Target profit margin (%)</label>
+                  <div class="input-wrap suffix"><input id="margin" data-quote-input type="number" min="0" max="80" step="1" value="20" aria-describedby="margin-help"><span aria-hidden="true">%</span></div>
+                  <span class="input-help" id="margin-help">Margin is a share of the final price.</span>
                 </div>
               </div>
             </div>
 
-            <div class="calc-results" aria-live="polite">
+            <div class="calc-results">
               <p class="kicker">Planning result</p>
-              <div class="result-hero"><span>Target quote</span><strong id="targetQuote">$0</strong></div>
+              <div class="result-hero" aria-live="polite" aria-atomic="true"><span>Target quote</span><strong id="targetQuote">$0.00</strong></div>
               <div class="result-grid">
                 <div class="result-card"><span>Labor allowance</span><strong id="laborCost">$0</strong></div>
                 <div class="result-card"><span>Cost floor + overhead</span><strong id="costFloor">$0</strong></div>
