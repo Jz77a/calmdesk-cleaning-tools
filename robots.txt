@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jz77a.github.io/calmdesk-cleaning-tools/sitemap.xml
