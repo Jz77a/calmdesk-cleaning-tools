@@ -175,6 +175,21 @@ input[type="number"] {
 .health { margin-top: 14px; padding: 13px; border-left: 5px solid var(--green); background: white; }
 .health.caution { border-color: var(--orange); }
 .health.warning { border-color: var(--red); }
+.result-upgrade {
+  display: grid;
+  gap: 12px;
+  margin-top: 16px;
+  padding: 18px;
+  border: 2px solid var(--ink);
+  border-radius: 16px;
+  background: var(--paper);
+  box-shadow: 4px 4px 0 var(--ink);
+}
+.result-upgrade .kicker { margin-bottom: 5px; color: var(--green); }
+.result-upgrade h3 { margin-bottom: 7px; font-size: 1.25rem; }
+.result-upgrade p { margin: 0; color: var(--muted); font-size: 0.86rem; }
+.result-upgrade .result-cta { justify-self: start; background: var(--ink); color: white; }
+.result-upgrade .result-upgrade-note { color: var(--ink); font-size: 0.72rem; font-weight: 800; }
 .formula { margin: 16px 0 0; padding-top: 14px; border-top: 1px solid rgba(23, 23, 17, 0.25); color: var(--muted); font-size: 0.78rem; }
 
 .cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
@@ -219,6 +234,7 @@ input[type="number"] {
   .field.full { grid-column: auto; }
   .hero { padding-top: 48px; }
   .calc-inputs, .calc-results { padding: 20px; }
+  .result-upgrade .result-cta { justify-self: stretch; width: 100%; }
   .footer-grid { flex-direction: column; }
   .brand { letter-spacing: 0.05em; }
   .nav { gap: 8px; }
